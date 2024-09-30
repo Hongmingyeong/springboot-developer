@@ -1,6 +1,7 @@
 package com.itschool.springbootdeveloper.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.itschool.springbootdeveloper.SpringBootDeveloperApplication;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -22,7 +23,7 @@ public abstract class MockMvcTest<T, ID> {
     @Autowired
     private WebApplicationContext context;
 
-    @Autowired
+    @Autowired(required = false)
     JpaRepository<T, ID> baseRepository;
 
     @BeforeEach
